@@ -6,7 +6,7 @@
 
 :root {
   --text-color: white;
-  --bg-url: url(./assets/bg-mobile.jpg);
+  --bg-url: url(./assets/bg-mobile.png);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -14,27 +14,47 @@
 }
 
 body {
-  background: var(--bg-url) no-repeat top center/cover;
-  height: 100vh;
+  background-image: var(--bg-url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
 }
+
 
 body * {
   font-family: "Inter", sans-serif;
   color: var(--text-color);
 }
 
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+
 h1 {
   font-size: 32px;
   font-weight: 600;
   text-align: center;
   margin-top: 12px;
+  color: var(--text-color);
+}
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 12px;
+  color: var(--text-color);
 }
 
 #Container {
   width: 100%;
-  max-width: 588px;
-  margin: 56px auto 0px;
-  padding: 0 24px;
+  max-width: 380px;
+  margin: 56px auto 0;
+  padding-inline: 16px;
 }
 
 /* Profile */
@@ -44,8 +64,13 @@ h1 {
 }
 
 #profile img {
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
+
 
 #profile p {
   font-weight: 500;
@@ -76,9 +101,10 @@ ul li a {
 
   text-decoration: none;
   font-weight: 500;
-
+  color: var(--text-color);
   transition: background 0.2s;
 }
+
 
 ul li a:hover {
   background: var(--surface-color-hover);
